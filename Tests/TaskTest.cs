@@ -10,7 +10,7 @@ namespace ToDoList
   {
     public TaskTest()
     {
-      DBConfiguration.connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo_extended_test;Integrated Security=SSPI;";
+      DBConfiguration.connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo_test;Integrated Security=SSPI;";
     }
 
     [Fact]
