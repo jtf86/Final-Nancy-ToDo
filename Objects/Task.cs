@@ -48,7 +48,7 @@ namespace ToDoList
       List<Task> AllTasks = new List<Task>{};
 
       SqlConnection conn = DB.Connection();
-      SqlDataReader rdr = null;
+      SqlDataReader rdr;
       conn.Open();
 
       SqlCommand cmd = new SqlCommand("SELECT * FROM tasks", conn);
@@ -112,7 +112,7 @@ namespace ToDoList
     public static Task Find(int id)
     {
       SqlConnection conn = DB.Connection();
-      SqlDataReader rdr = null;
+      SqlDataReader rdr;
       conn.Open();
 
       SqlCommand cmd = new SqlCommand("SELECT * FROM tasks WHERE id = @TaskId", conn);
@@ -146,7 +146,7 @@ namespace ToDoList
     public void Update(string newDescription)
     {
       SqlConnection conn = DB.Connection();
-      SqlDataReader rdr = null;
+      SqlDataReader rdr;
       conn.Open();
 
       SqlCommand cmd = new SqlCommand("UPDATE tasks SET description = @NewDescription OUTPUT INSERTED.description WHERE id = @TaskId;", conn);
@@ -226,7 +226,7 @@ namespace ToDoList
     public List<Category> GetCategories()
     {
       SqlConnection conn = DB.Connection();
-      SqlDataReader rdr = null;
+      SqlDataReader rdr;
       conn.Open();
 
       SqlCommand cmd = new SqlCommand("SELECT category_id FROM categories_tasks WHERE task_id = @TaskId;", conn);
@@ -254,7 +254,7 @@ namespace ToDoList
 
       foreach (int categoryId in categoryIds)
       {
-        SqlDataReader queryReader = null;
+        SqlDataReader queryReader;
         SqlCommand categoryQuery = new SqlCommand("SELECT * FROM categories WHERE id = @CategoryId;", conn);
 
         SqlParameter categoryIdParameter = new SqlParameter();
