@@ -45,6 +45,6 @@ namespace ToDoList
 
     public static class DBConfiguration
     {
-        public static string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo_extended;Integrated Security=SSPI;";
+        public static string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=todo;Integrated Security=SSPI;";
     }
 }
